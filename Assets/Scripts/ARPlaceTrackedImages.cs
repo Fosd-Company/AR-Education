@@ -22,12 +22,6 @@ public class ARPlaceTrackedImages : MonoBehaviour
         
     void Awake()
     {   
-        // Adding callbacks
-
-        /* button_Start.onClick.AddListener(StartInterface);
-        button_Quit.onClick.AddListener(QuitInterface); */
-        
-        // Instantiating components
         _trackedImagesManager = GetComponent<ARTrackedImageManager>();
     }
 
@@ -69,7 +63,6 @@ public class ARPlaceTrackedImages : MonoBehaviour
                             $"guid: {trackedImage.referenceImage.guid}";
                     
                     Debug.Log(logText);
-                    ShowAndroidToastMessage("Instantiated!");
                 }
             }
         }
@@ -101,30 +94,5 @@ public class ARPlaceTrackedImages : MonoBehaviour
             logText = $"REMOVED (guid: {trackedImage.referenceImage.guid}).";
             Debug.Log(logText);
         }
-    }
-
-    /// <summary>
-    /// Show an Android toast message.
-    /// </summary>
-    /// <param name="message">Message string to show in the toast.</param>
-    private static void ShowAndroidToastMessage(string message)
-    {
-#if UNITY_ANDROID
-        using (var unityPlayer = new AndroidJavaClass("com.unity3d.player.UnityPlayer"))
-        {
-            var unityActivity = unityPlayer.GetStatic<AndroidJavaObject>("currentActivity");
-            if (unityActivity == null) return;
-            var toastClass = new AndroidJavaClass("android.widget.Toast");
-            unityActivity.Call("runOnUiThread", new AndroidJavaRunnable(() =>
-            {
-                // Last parameter = length. Toast.LENGTH_LONG = 1
-                using (var toastObject = toastClass.CallStatic<AndroidJavaObject>("makeText",
-                    unityActivity, message, 1))
-                {
-                    toastObject.Call("show");
-                }
-            }));
-        }
-#endif
     }
 }
