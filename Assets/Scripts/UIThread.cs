@@ -8,7 +8,7 @@ public class UIThread : MonoBehaviour
     private const string url_twitter = "https://twitter.com/Nic_ARTeam?s=09",
         url_mainpage = "https://nic-arteam.github.io/Nic-ARTeamPage/",
         url_facebook = "https://www.facebook.com/Nic-ARTeam-104434778692752/",
-        url_instagram = "https://www.instagram.com/invites/contact/?i=90dpr5zv8p8w&utm_content=msqqklw";
+        url_instagram = "https://www.instagram.com/nic_arteam/?utm_medium=copy_link";
 
     private void Awake()
     {
@@ -28,5 +28,5 @@ public class UIThread : MonoBehaviour
     public void OpenFB() => Application.OpenURL(url_facebook);
     public void OpenWeb() => Application.OpenURL(url_mainpage);
     public void OpenTW() => Application.OpenURL(url_twitter);
-    public void OpenIG() => Application.OpenURL(url_twitter);
+    public void OpenIG() => Application.OpenURL(url_instagram);
 }
