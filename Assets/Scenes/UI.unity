@@ -1230,7 +1230,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\xA9 2021 Nic-ARTeam\nAlpha v2.1"
+  m_Text: "\xA9 2022 FOSD\nAlpha v2.2"
 --- !u!222 &873012815
 CanvasRenderer:
   m_ObjectHideFlags: 0

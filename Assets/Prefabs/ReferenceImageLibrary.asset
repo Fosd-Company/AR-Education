@@ -19,8 +19,8 @@ MonoBehaviour:
       m_GuidLow: 5143186465425601289
       m_GuidHigh: 4580437977999234239
     m_SerializedTextureGuid:
-      m_GuidLow: 8130397627663739460
-      m_GuidHigh: 8040139731385203802
+      m_GuidLow: 4630837859690968683
+      m_GuidHigh: 7035612926276906457
     m_Size: {x: 0.052476384, y: 0.07}
     m_SpecifySize: 1
     m_Name: Earth
@@ -31,7 +31,7 @@ MonoBehaviour:
     m_SerializedTextureGuid:
       m_GuidLow: 11782780765519011714
       m_GuidHigh: 9246000792599310219
-    m_Size: {x: 0.03000548, y: 0.04}
+    m_Size: {x: 0.06001096, y: 0.08}
     m_SpecifySize: 1
     m_Name: Atom
     m_Texture: {fileID: 0}
@@ -124,4 +124,124 @@ MonoBehaviour:
     m_Size: {x: 0.052500002, y: 0.07}
     m_SpecifySize: 1
     m_Name: Tren
+    m_Texture: {fileID: 0}
+  - m_SerializedGuid:
+      m_GuidLow: 5413074384607606006
+      m_GuidHigh: 604874118693306544
+    m_SerializedTextureGuid:
+      m_GuidLow: 1272893616902639
+      m_GuidHigh: 6978559490958838920
+    m_Size: {x: 0.1, y: 0.1}
+    m_SpecifySize: 1
+    m_Name: qr_earth
+    m_Texture: {fileID: 0}
+  - m_SerializedGuid:
+      m_GuidLow: 4679545947151402118
+      m_GuidHigh: 14090261923741834409
+    m_SerializedTextureGuid:
+      m_GuidLow: 14840596652825208097
+      m_GuidHigh: 17255911773018034904
+    m_Size: {x: 0.1, y: 0.1}
+    m_SpecifySize: 1
+    m_Name: qr_atom
+    m_Texture: {fileID: 0}
+  - m_SerializedGuid:
+      m_GuidLow: 4882133014961120847
+      m_GuidHigh: 112158926283120294
+    m_SerializedTextureGuid:
+      m_GuidLow: 16178259925626465333
+      m_GuidHigh: 14756350069446398857
+    m_Size: {x: 0.1, y: 0.1}
+    m_SpecifySize: 1
+    m_Name: qr_axe
+    m_Texture: {fileID: 0}
+  - m_SerializedGuid:
+      m_GuidLow: 5444790566146730791
+      m_GuidHigh: 17848681686195372719
+    m_SerializedTextureGuid:
+      m_GuidLow: 6851295670590542319
+      m_GuidHigh: 7561842147895186520
+    m_Size: {x: 0.1, y: 0.1}
+    m_SpecifySize: 1
+    m_Name: qr_bow
+    m_Texture: {fileID: 0}
+  - m_SerializedGuid:
+      m_GuidLow: 4751623979008505789
+      m_GuidHigh: 15567321144890053761
+    m_SerializedTextureGuid:
+      m_GuidLow: 13426472515791446801
+      m_GuidHigh: 18238850466838769002
+    m_Size: {x: 0.5021923, y: 0.67}
+    m_SpecifySize: 1
+    m_Name: Bow
+    m_Texture: {fileID: 0}
+  - m_SerializedGuid:
+      m_GuidLow: 5588990011934271100
+      m_GuidHigh: 15457329086693109893
+    m_SerializedTextureGuid:
+      m_GuidLow: 13696739310422556873
+      m_GuidHigh: 7991001585067884472
+    m_Size: {x: 0.1, y: 0.1}
+    m_SpecifySize: 1
+    m_Name: qr_capside
+    m_Texture: {fileID: 0}
+  - m_SerializedGuid:
+      m_GuidLow: 4729110165298989874
+      m_GuidHigh: 5064722133623318449
+    m_SerializedTextureGuid:
+      m_GuidLow: 16754519730024064715
+      m_GuidHigh: 12332963378015387291
+    m_Size: {x: 0.1, y: 0.1}
+    m_SpecifySize: 1
+    m_Name: qr_caravel
+    m_Texture: {fileID: 0}
+  - m_SerializedGuid:
+      m_GuidLow: 4722217083199082292
+      m_GuidHigh: 7231815348821818547
+    m_SerializedTextureGuid:
+      m_GuidLow: 6981747107805746486
+      m_GuidHigh: 11858621197062757449
+    m_Size: {x: 0.1, y: 0.1}
+    m_SpecifySize: 1
+    m_Name: qr_digestion
+    m_Texture: {fileID: 0}
+  - m_SerializedGuid:
+      m_GuidLow: 4794880243495183423
+      m_GuidHigh: 2737377799645969294
+    m_SerializedTextureGuid:
+      m_GuidLow: 2198955569828043248
+      m_GuidHigh: 8493592231037721032
+    m_Size: {x: 0.1, y: 0.1}
+    m_SpecifySize: 1
+    m_Name: qr_dna
+    m_Texture: {fileID: 0}
+  - m_SerializedGuid:
+      m_GuidLow: 4892399804681741136
+      m_GuidHigh: 1668468215875030168
+    m_SerializedTextureGuid:
+      m_GuidLow: 9675127483957122268
+      m_GuidHigh: 12060346599193675497
+    m_Size: {x: 0.1, y: 0.1}
+    m_SpecifySize: 1
+    m_Name: qr_fungus
+    m_Texture: {fileID: 0}
+  - m_SerializedGuid:
+      m_GuidLow: 4763477791505449858
+      m_GuidHigh: 8291133582903327109
+    m_SerializedTextureGuid:
+      m_GuidLow: 1001201471605993415
+      m_GuidHigh: 13635321409381470155
+    m_Size: {x: 0.1, y: 0.1}
+    m_SpecifySize: 1
+    m_Name: qr_tree
+    m_Texture: {fileID: 0}
+  - m_SerializedGuid:
+      m_GuidLow: 4697148003649308437
+      m_GuidHigh: 6420204454831514496
+    m_SerializedTextureGuid:
+      m_GuidLow: 5247887310520872452
+      m_GuidHigh: 5080880107675475963
+    m_Size: {x: 0.1, y: 0.1}
+    m_SpecifySize: 1
+    m_Name: qr_virus
     m_Texture: {fileID: 0}

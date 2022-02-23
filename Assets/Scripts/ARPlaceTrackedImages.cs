@@ -49,7 +49,7 @@ public class ARPlaceTrackedImages : MonoBehaviour
             var imageName = trackedImage.referenceImage.name;
             foreach (var curPrefab in ArPrefabs)
             {
-                if (string.Compare(curPrefab.name, imageName, StringComparison.Ordinal) == 0 
+                if (imageName.Contains(curPrefab.name, StringComparison.OrdinalIgnoreCase)
                     && !_instantiatedPrefabs.ContainsKey(imageName))
                 {
                     // Found a corresponding prefab for the reference image, and it has not been instantiated yet
@@ -58,8 +58,8 @@ public class ARPlaceTrackedImages : MonoBehaviour
                     var newPrefab = Instantiate(curPrefab, trackedImage.transform);
                     // Store a reference to the created prefab
                     _instantiatedPrefabs[imageName] = newPrefab;
-                    logText = $"{Time.time} -> Instantiated prefab for tracked image (name: {imageName}).\n" +
-                            $"newPrefab.transform.parent.name: {newPrefab.transform.parent.name}.\n" +
+                    logText = $"{Time.time} -> Tracked image (name: {imageName}).\n" +
+                            $"using prefab (name: {newPrefab.name}).\n" +
                             $"guid: {trackedImage.referenceImage.guid}";
                     
                     Debug.Log(logText);
@@ -91,8 +91,24 @@ public class ARPlaceTrackedImages : MonoBehaviour
             // Alternative: do not destroy the instance, just set it inactive
             //_instantiatedPrefabs[trackedImage.referenceImage.name].SetActive(false);
 
-            logText = $"REMOVED (guid: {trackedImage.referenceImage.guid}).";
+            logText = $"REMOVED (TrackerName: {trackedImage.referenceImage.name}).";
             Debug.Log(logText);
         }
     }
+}
+
+public static class StringExtensions
+{
+   public static bool Contains(this String str, String substring, 
+                               StringComparison comp)
+   {                            
+        if (substring == null)
+            throw new ArgumentNullException("substring", 
+                                         "substring cannot be null.");
+        else if (! Enum.IsDefined(typeof(StringComparison), comp))
+            throw new ArgumentException("comp is not a member of StringComparison",
+                                     "comp");
+
+        return str.IndexOf(substring, comp) >= 0;                      
+   }
 }
