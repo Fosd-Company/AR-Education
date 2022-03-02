@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2539639148900697823}
   - component: {fileID: 349709638712046101}
   m_Layer: 0
-  m_Name: digestion
+  m_Name: Digestion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
