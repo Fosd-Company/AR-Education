@@ -14,17 +14,23 @@ public class ARPlaceTrackedImages : MonoBehaviour
     [SerializeField]
     public GameObject[] ArPrefabs;
 
+    [SerializeField]
+    public GameObject ToastOutput;
+
+    [SerializeField]
+    public int ToastDuration;
+
     // Internal storage of created prefabs for easier updating
     private readonly Dictionary<string, GameObject> _instantiatedPrefabs = new Dictionary<string, GameObject>();
 
     // Reference to logging UI element in the canvas
     private string logText;
+    private string currentTarget = "none";
         
     void Awake()
     {   
         _trackedImagesManager = GetComponent<ARTrackedImageManager>();
     }
-
     
     void OnEnable()
     {
@@ -43,6 +49,7 @@ public class ARPlaceTrackedImages : MonoBehaviour
         
         // Go through all tracked images that have been added
         // (-> new markers detected)
+        
         foreach (var trackedImage in eventArgs.added)
         {
             // Get the name of the reference image to search for the corresponding prefab
@@ -58,8 +65,9 @@ public class ARPlaceTrackedImages : MonoBehaviour
                     var newPrefab = Instantiate(curPrefab, trackedImage.transform);
                     // Store a reference to the created prefab
                     _instantiatedPrefabs[imageName] = newPrefab;
+                    _instantiatedPrefabs[imageName].name = curPrefab.name;
                     logText = $"{Time.time} -> Tracked image (name: {imageName}).\n" +
-                            $"using prefab (name: {newPrefab.name}).\n" +
+                            $"using prefab (name: {curPrefab.name}).\n" +
                             $"guid: {trackedImage.referenceImage.guid}";
                     
                     Debug.Log(logText);
@@ -72,6 +80,16 @@ public class ARPlaceTrackedImages : MonoBehaviour
         {
             _instantiatedPrefabs[trackedImage.referenceImage.name]
                 .SetActive(trackedImage.trackingState == TrackingState.Tracking);
+
+            if (trackedImage.trackingState == TrackingState.Tracking
+                && currentTarget != trackedImage.referenceImage.name)
+            {
+                currentTarget = trackedImage.referenceImage.name;
+
+                var prefabName = _instantiatedPrefabs[trackedImage.referenceImage.name].name;
+                Debug.Log("Now tracking: " + prefabName);
+                Notify(prefabName);
+            }
         }
 
         // Remove is called if the subsystem has given up looking for the trackable again.
@@ -94,6 +112,24 @@ public class ARPlaceTrackedImages : MonoBehaviour
             logText = $"REMOVED (TrackerName: {trackedImage.referenceImage.name}).";
             Debug.Log(logText);
         }
+    }
+
+    private void Notify(string message)
+    {
+        var targetText = ToastOutput.transform.GetChild(0).gameObject;
+        if (targetText == null) {
+            Debug.Log("Couldn't access to toast text");
+            return;
+        }
+        targetText.GetComponent<Text>().text = message;
+        ToastOutput.SetActive(true);
+        Invoke("HideNotify", ToastDuration);
+    }
+
+    private void HideNotify()
+    {
+        ToastOutput.SetActive(false);
+        Debug.Log("Notify hidden");
     }
 }
 

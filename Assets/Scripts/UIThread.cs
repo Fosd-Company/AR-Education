@@ -13,6 +13,7 @@ public class UIThread : MonoBehaviour
     private void Awake()
     {
         Screen.orientation = ScreenOrientation.Portrait;
+        Input.backButtonLeavesApp = true;
     }
 
     public void LoadTrackingSession()
