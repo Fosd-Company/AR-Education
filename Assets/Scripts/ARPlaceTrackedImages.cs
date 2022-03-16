@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
+using Pipelines;
 
 public class ARPlaceTrackedImages : MonoBehaviour
 {
@@ -20,8 +21,14 @@ public class ARPlaceTrackedImages : MonoBehaviour
     [SerializeField]
     public int ToastDuration;
 
+    Image toastImg;
+    Text toastHeader;
+    Text toastText;
+
     // Internal storage of created prefabs for easier updating
     private readonly Dictionary<string, GameObject> _instantiatedPrefabs = new Dictionary<string, GameObject>();
+    // Internal storage of Sprite Resources
+    private readonly Dictionary<int, Sprite> modelSprites = new Dictionary<int, Sprite>();
 
     // Reference to logging UI element in the canvas
     private string logText;
@@ -30,6 +37,27 @@ public class ARPlaceTrackedImages : MonoBehaviour
     void Awake()
     {   
         _trackedImagesManager = GetComponent<ARTrackedImageManager>();
+
+        foreach (var model in Data.models)
+        {
+            modelSprites.Add(
+                model.ID,
+                Resources.Load<Sprite>("Sprites/ModelGrid/" + model.ID));
+        }
+
+        if (ToastOutput == null)
+        {
+            print("Toast is null");
+        }else
+        {
+            toastImg = ToastOutput.transform.GetChild(0).GetComponent<Image>();
+            toastHeader = ToastOutput.transform.GetChild(1).GetComponent<Text>();
+            toastText = ToastOutput.transform.GetChild(2).GetComponent<Text>();
+
+            if (toastImg == null || toastHeader == null || toastText == null) {
+                print("Couldn't access to toast properties");
+            }
+        }
     }
     
     void OnEnable()
@@ -114,14 +142,14 @@ public class ARPlaceTrackedImages : MonoBehaviour
         }
     }
 
-    private void Notify(string message)
+    private void Notify(string modelName)
     {
-        var targetText = ToastOutput.transform.GetChild(0).gameObject;
-        if (targetText == null) {
-            Debug.Log("Couldn't access to toast text");
-            return;
-        }
-        targetText.GetComponent<Text>().text = message;
+        var model = Data.FindModelByName(modelName);
+        RedirectData.targetModel = model;
+        RedirectData.targetSprite = toastImg.sprite = modelSprites[model.ID];
+        toastHeader.text = model.Name;
+        toastText.text = model.Type;
+
         ToastOutput.SetActive(true);
         Invoke("HideNotify", ToastDuration);
     }
