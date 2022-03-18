@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7396746428298626868}
   m_Layer: 0
-  m_Name: Virus
+  m_Name: Omicron
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
