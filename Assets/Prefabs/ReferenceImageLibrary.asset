@@ -113,7 +113,7 @@ MonoBehaviour:
       m_GuidHigh: 4064652106295741193
     m_Size: {x: 0.11252325, y: 0.15}
     m_SpecifySize: 1
-    m_Name: Virus
+    m_Name: Omicron
     m_Texture: {fileID: 0}
   - m_SerializedGuid:
       m_GuidLow: 4733834310219825173
@@ -243,5 +243,5 @@ MonoBehaviour:
       m_GuidHigh: 5080880107675475963
     m_Size: {x: 0.1, y: 0.1}
     m_SpecifySize: 1
-    m_Name: qr_virus
+    m_Name: qr_omicron
     m_Texture: {fileID: 0}
