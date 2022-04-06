@@ -143,7 +143,7 @@ MonoBehaviour:
       m_GuidHigh: 17255911773018034904
     m_Size: {x: 0.1, y: 0.1}
     m_SpecifySize: 1
-    m_Name: qr_atom
+    m_Name: Atom
     m_Texture: {fileID: 0}
   - m_SerializedGuid:
       m_GuidLow: 4882133014961120847
@@ -173,7 +173,7 @@ MonoBehaviour:
       m_GuidHigh: 18238850466838769002
     m_Size: {x: 0.5021923, y: 0.67}
     m_SpecifySize: 1
-    m_Name: Bow
+    m_Name: qr_bow
     m_Texture: {fileID: 0}
   - m_SerializedGuid:
       m_GuidLow: 5588990011934271100
@@ -193,7 +193,7 @@ MonoBehaviour:
       m_GuidHigh: 12332963378015387291
     m_Size: {x: 0.1, y: 0.1}
     m_SpecifySize: 1
-    m_Name: qr_caravel
+    m_Name: Caravel
     m_Texture: {fileID: 0}
   - m_SerializedGuid:
       m_GuidLow: 4722217083199082292
@@ -213,7 +213,7 @@ MonoBehaviour:
       m_GuidHigh: 8493592231037721032
     m_Size: {x: 0.1, y: 0.1}
     m_SpecifySize: 1
-    m_Name: qr_dna
+    m_Name: DNA
     m_Texture: {fileID: 0}
   - m_SerializedGuid:
       m_GuidLow: 4892399804681741136
@@ -243,5 +243,35 @@ MonoBehaviour:
       m_GuidHigh: 5080880107675475963
     m_Size: {x: 0.1, y: 0.1}
     m_SpecifySize: 1
-    m_Name: qr_omicron
+    m_Name: Omicron
+    m_Texture: {fileID: 0}
+  - m_SerializedGuid:
+      m_GuidLow: 5761471091889944168
+      m_GuidHigh: 16983030145614313649
+    m_SerializedTextureGuid:
+      m_GuidLow: 13516453340885033109
+      m_GuidHigh: 2824996817588061899
+    m_Size: {x: 0.1, y: 0.1}
+    m_SpecifySize: 1
+    m_Name: Mercedes
+    m_Texture: {fileID: 0}
+  - m_SerializedGuid:
+      m_GuidLow: 5124197853222354072
+      m_GuidHigh: 9044989554449381814
+    m_SerializedTextureGuid:
+      m_GuidLow: 6896163814656582574
+      m_GuidHigh: 9150895570978924203
+    m_Size: {x: 0.1, y: 0.1}
+    m_SpecifySize: 1
+    m_Name: Tren
+    m_Texture: {fileID: 0}
+  - m_SerializedGuid:
+      m_GuidLow: 5558846584549006872
+      m_GuidHigh: 343766882718572185
+    m_SerializedTextureGuid:
+      m_GuidLow: 5022781776619513669
+      m_GuidHigh: 13287325950401409864
+    m_Size: {x: 0.5, y: 0.5}
+    m_SpecifySize: 1
+    m_Name: Ram
     m_Texture: {fileID: 0}
