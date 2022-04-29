@@ -49,7 +49,7 @@
         /* Common image formats */
         "**/*.jpg":true,
         "**/*.jpeg":true,
-        "**/*.png":false,
+        "**/*.png":true,
         "**/*.tga":true,
         "**/*.tif":true,
         "**/*.tiff":true,
@@ -71,6 +71,7 @@
         "Assets/StreamingAssets":true,
         "Assets/Textures":true,
         "Assets/Trackers":true,
+        "Assets/Resources":true,
         "Assets/XR":true,
         "Assets/InitCodeMarker":true,
     }
