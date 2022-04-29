@@ -7,14 +7,33 @@ namespace Pipelines
     {
         public static Sprite targetSprite { get; set; }
         public static ARModel targetModel { get; set; }
+
+        public static GameObject targetPrefab { get; set; }
+
+        public static GameObject[] prefabs { get; set; }
+
+        // Prefab returned needs to be instantiated
+        public static void SetTargetPrefab(string name) {
+            if (prefabs != null) {
+                foreach (var go in prefabs) {
+                    if (name.Contains(go.name, System.StringComparison.OrdinalIgnoreCase)) {
+                        targetPrefab = go;
+                        Debug.Log($"Target prefab is now: {name}");
+                    }
+                }
+            }else {
+                targetPrefab = null;
+                Debug.Log($"{name} not found or prefab list is null");
+            }
+        }
     }
 
     public class InfoPanel
     {
-        public Image InfoImg { get; }
-        public Text TypeName { get; }
         public Text Header { get; }
-        public InputField BookField { get; }
+        public Image InfoImg { get; }
+        public Text ModelName { get; }
+        public Text Description { get; }
 
         public InfoPanel(GameObject infoMenu)
         {
@@ -27,10 +46,10 @@ namespace Pipelines
                 /* InfoMenu -> Content -> Image*/
                 InfoImg = content.GetChild(0).GetComponent<Image>();
 
-                /* InfoMenu -> Content -> Panel -> panel_inner*/
-                var panelInner = content.GetChild(1).GetChild(0);
-                BookField = panelInner.GetChild(0).GetComponent<InputField>();
-                TypeName = panelInner.GetChild(1).GetComponent<Text>();
+                /* InfoMenu -> Content -> Panel */
+                var panel = content.GetChild(1);
+                ModelName = panel.GetChild(0).GetComponent<Text>();
+                Description = panel.GetChild(1).GetComponent<Text>();
             }
         }
 
@@ -38,8 +57,8 @@ namespace Pipelines
         {
             Header.text = model.Name;
             InfoImg.sprite = modelSprite;
-            TypeName.text = model.Type;
-            BookField.text = model.Book;
+            ModelName.text = model.Name;
+            Description.text = model.Description;
         }
     }
 }

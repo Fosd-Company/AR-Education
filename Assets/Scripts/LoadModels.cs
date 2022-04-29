@@ -9,14 +9,14 @@ public class LoadModels : MonoBehaviour
     public GameObject InfoMenu;
     
     [SerializeField]
-    private InfoPanel infoPanel;
+    private InfoPanel InfoPanel;
 
     Dictionary<int, GameObject> ModelPanels;
     
     void Awake()
     {
         ModelPanels = new Dictionary<int, GameObject>();
-        infoPanel = new InfoPanel(InfoMenu);
+        InfoPanel = new InfoPanel(InfoMenu);
     }
 
     // Start is called before the first frame update
@@ -55,7 +55,9 @@ public class LoadModels : MonoBehaviour
 
     void ShowInfo(Sprite modelSprite, ARModel model)
     {
-        infoPanel.SetInfo(modelSprite, model);
+        InfoPanel.SetInfo(modelSprite, model);
+        RedirectData.SetTargetPrefab(model.Name);
+        
         GameObject.Find("MainMenu").SetActive(false);
         InfoMenu.SetActive(true);
     }

@@ -11,6 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Tracking.unity
     guid: 0cb39c708883ed94c8ea213016f278ba
+  - enabled: 1
+    path: Assets/Scenes/Anchors.unity
+    guid: 0bf71535bf437c340a6e07435023d45b
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: cb5b441f55ce4fe44871af9ef178bc3b, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 24379f5cfc162124cbdf0ddb17657bba, type: 2}
