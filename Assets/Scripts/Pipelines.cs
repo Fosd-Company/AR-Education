@@ -5,11 +5,14 @@ namespace Pipelines
 {
     public static class RedirectData
     {
+        // For passing models an modelSprites (pictures) through the scenes and panels
         public static Sprite targetSprite { get; set; }
         public static ARModel targetModel { get; set; }
 
+        // Prefab target used by the anchor
         public static GameObject targetPrefab { get; set; }
 
+        // UI Thread prefabs
         public static GameObject[] prefabs { get; set; }
 
         // Prefab returned needs to be instantiated
